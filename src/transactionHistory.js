@@ -1,8 +1,6 @@
 const _=require('lodash');
-const Web3 = require('web3');
 const axios = require('axios');
 const config = require('../etc/contractConfig');
-const web3 = new Web3(new Web3.providers.WebsocketProvider(config.uri));
 const contractAddress = config.contractAddress;
 
 module.exports = async function getTranctionHistory(walletId, page, offset) {
