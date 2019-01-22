@@ -1,12 +1,12 @@
 const _=require('lodash');
 const Web3 = require('web3');
-const web3 = new Web3(new Web3.providers.WebsocketProvider("wss://kovan.infura.io/ws"));
 const axios = require('axios');
 const config = require('../etc/contractConfig');
+const web3 = new Web3(new Web3.providers.WebsocketProvider(config.uri));
 const contractAddress = config.contractAddress;
 
 module.exports = async function getTranctionHistory(walletId, page, offset) {
-    const host = "https://api-kovan.etherscan.io/api";
+    const host = config.apiHost;
     let queryParas = {
         module: "account",
         action: "txlist",
@@ -16,7 +16,7 @@ module.exports = async function getTranctionHistory(walletId, page, offset) {
         page: page,
         offset: offset, // transactions per page
         sort: "desc",
-        apikey: "PPMC2BNNWMGHYVJ1N8GSGNJB9ED34A2T3Y"
+        apikey: config.apiKey,
     };
     const paras = _.chain(queryParas)
         .reduce((paras,v,k)=>{
