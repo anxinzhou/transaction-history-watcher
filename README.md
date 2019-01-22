@@ -11,4 +11,6 @@ npm i
 
 ## Run program
 
+```
 node main.js
+```
