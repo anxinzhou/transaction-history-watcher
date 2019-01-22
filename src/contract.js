@@ -47,12 +47,6 @@ function bindEventsWithIndexedPara(abi,events) {
             return mapping
         },{})
         .value();
-    return _.zipObject(events,indexedParas)
-}
-
-// read transaction history from blockchain
-function getHistoryTxByEvents(blockCheckpoint, contractAddress, events) {
-
 }
 
 function formatBlockTimestamp(timestamp) {
