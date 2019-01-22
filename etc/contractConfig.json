@@ -1,6 +1,5 @@
 {
   "apiHost": "https://api-kovan.etherscan.io/api",
   "apiKey": "PPMC2BNNWMGHYVJ1N8GSGNJB9ED34A2T3Y",
-  "contractAddress": "0x4f1ea08fcca85205e00cd13f17c2abd78eb9f53a",
-  "uri": "wss://kovan.infura.io/ws"
+  "contractAddress": "0x4f1ea08fcca85205e00cd13f17c2abd78eb9f53a"
 }
