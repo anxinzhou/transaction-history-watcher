@@ -1,0 +1,9 @@
+{
+  "username": "root",
+  "password": "",
+  "host": "127.0.0.1",
+  "port": "27017",
+  "database": "txHistory",
+  "collectionName": "secdevTxs",
+  "checkPointCollection": "checkPoint"
+}
