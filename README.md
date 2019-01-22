@@ -9,7 +9,7 @@ under the folder src
 npm i 
 ```
 
-## Run program
+run program
 
 ```
 node main.js
