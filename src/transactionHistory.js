@@ -41,14 +41,14 @@ async function getTokenTransactionHistory(walletId, page, offset) {
         try {
             let uri = getUri(walletId,i,offset);
             const res = await axios.get(uri);
-            console.log(`Get ${res.data.result.length} transaction from remote`);
+            console.log(`Fetched ${res.data.result.length} transactions from remote`);
             if(res.data.result.length === 0) {
                 break;
             }
             _.forEach(res.data.result,(tx=>{
                 if(isSlot(tx)) {
                     if(count>=start) {
-                        console.log("get a token transaction");
+                        console.log("add one token transaction to result list");
                         result.push({
                             date: formatBlockTimestamp(tx.timeStamp),
                             hash: tx.hash,
