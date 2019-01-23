@@ -46,19 +46,21 @@ async function getTokenTransactionHistory(walletId, page, offset) {
                 break;
             }
             _.forEach(res.data.result,(tx=>{
-                if(isSlot(tx) && count>=start) {
-                    result.push({
-                        date: formatBlockTimestamp(tx.timeStamp),
-                        hash: tx.hash,
-                        from: tx.from,
-                        to: tx.to,
-                        value: tx.value/10**18,
-                        isError: tx.isError!=='0',
-                        gasFee: eval(tx.cumulativeGasUsed)*eval(tx.gasPrice)/10**18,
-                        isContractCreation:  isContractCreation(tx),
-                        contractAddress: tx.contractAddress,
-                        isSlot: isSlot(tx),
-                    });
+                if(isSlot(tx)) {
+                    if(count>=start) {
+                        result.push({
+                            date: formatBlockTimestamp(tx.timeStamp),
+                            hash: tx.hash,
+                            from: tx.from,
+                            to: tx.to,
+                            value: tx.value/10**18,
+                            isError: tx.isError!=='0',
+                            gasFee: eval(tx.cumulativeGasUsed)*eval(tx.gasPrice)/10**18,
+                            isContractCreation:  isContractCreation(tx),
+                            contractAddress: tx.contractAddress,
+                            isSlot: isSlot(tx),
+                        });
+                    }
                     count+=1;
                 }
                 if(count === end) {

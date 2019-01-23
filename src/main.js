@@ -6,6 +6,6 @@ historyGetter.getEthTransactionHistory("0x88d6F234b6327b7a9d9d23014EFd6E05b6Dc89
     .then(txs=>console.log(txs.length))
     .catch(console.log);
 
-historyGetter.getTokenTransactionHistory("0x88d6F234b6327b7a9d9d23014EFd6E05b6Dc8943",4,10)
+historyGetter.getTokenTransactionHistory("0x88d6F234b6327b7a9d9d23014EFd6E05b6Dc8943",2,10)
 .then(txs=>console.log(txs.length))
     .catch(console.log);
